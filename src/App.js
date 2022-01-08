@@ -88,6 +88,10 @@ class App extends React.Component {
   render(){
     return( 
     <div className="App">   
+    <div className="mainTitle">
+      <h1>Search Now!</h1>
+      <h1>World Weather</h1>
+    </div>
       
       <Weather city={this.state.city} 
                country={this.state.country}
@@ -99,6 +103,12 @@ class App extends React.Component {
       />
 
       <Form loadWeather={this.getWeather}/>
+
+     <footer>
+       <h6>
+        © All reserved by Jacob kim @ Langara WMDD
+      </h6>
+     </footer> 
 
     </div>
   );

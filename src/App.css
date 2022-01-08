@@ -2,37 +2,30 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-image: url('./assets/daniel-ramirez\ by\ unsplash.com.jpg');
+  /* Photo by <a href="https://unsplash.com/@danramirez1998?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Daniel Ramírez</a> on <a href="https://unsplash.com/s/photos/weather?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+   */
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.cards {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.mainTitle {
+  margin-top: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.mainTitle h1{
+  color: rgb(240, 235, 172);
 }
+
+footer {
+  margin-top: 450px;
+}
+
+
+
+
