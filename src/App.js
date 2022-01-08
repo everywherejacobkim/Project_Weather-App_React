@@ -3,6 +3,7 @@ import './App.css';
 import 'weather-icons/css/weather-icons.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Weather from './component/weather.component';
+import Form from './component/form.component';
 import { Component } from 'react/cjs/react.production.min';
 
 const API_key = "a547490d7e1a6cc61d752508bf272726";
@@ -58,9 +59,12 @@ class App extends React.Component {
     }
   }
 
-  getWeather = async() => {
+  getWeather = async(e) => {
+
+    e.preventDefault();
+
     const apiCall = await fetch(
-      `http://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=${API_key}`
+      `http://api.openweathermap.org/data/2.5/weather?q=Vancouver,canada&appid=${API_key}`
     );
 
     const response = await apiCall.json();
@@ -82,6 +86,7 @@ class App extends React.Component {
   render(){
     return( 
     <div className="App">   
+      
       <Weather city={this.state.city} 
                country={this.state.country}
                temp_celsius={this.state.celsius}
@@ -90,6 +95,9 @@ class App extends React.Component {
                description={this.state.description}
                weatherIcon={this.state.icon}
       />
+
+      <Form loadWeather={this.getWeather}/>
+
     </div>
   );
  }
