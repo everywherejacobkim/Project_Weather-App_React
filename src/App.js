@@ -63,16 +63,18 @@ class App extends React.Component {
 
     e.preventDefault();
 
+    const city = e.target.elements.city.value;
+    const country = e.target.elements.country.value;
+
     const apiCall = await fetch(
-      `http://api.openweathermap.org/data/2.5/weather?q=Vancouver,canada&appid=${API_key}`
+      `http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_key}`
     );
 
     const response = await apiCall.json();
     console.log(response);
 
     this.setState({
-      city: response.name,
-      country: response.sys.country, 
+      city: `${response.name}, ${response.sys.country}`,
       celsius: this.calCelsius(response.main.temp),
       temp_max:this.calCelsius(response.main.temp_max),
       temp_min: this.calCelsius(response.main.temp_min),
